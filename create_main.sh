@@ -33,21 +33,31 @@ case $1 in
         fi
     ;;
     "--py") 
-        if [ ! -f main.py ]; then
-            touch main.py
-            echo -e $PY > main.py
+        if [ -z $2]; then
+            if [ ! -f main.py ] ; then
+                touch main.py
+                echo -e $PY > main.py
+            else
+                echo "Já existe um arquivo main.cpp. Deseja remover?(S/N)"
+                read RM
+                case $RM in
+                    "S") rm -f main.py
+                    ;;
+                    2"N") echo 2 or 3
+                    ;;
+                    *) echo default
+                    ;;
+                esac
+                
+            fi
         else
-            echo "Já existe um arquivo main.cpp. Deseja remover?(S/N)"
-            read RM
-            case $RM in
-                "S") rm -f main.py
-                ;;
-                2"N") echo 2 or 3
-                ;;
-                *) echo default
-                ;;
-            esac
-            
+            for i in $PWD/*; do
+                if [[ "$i" == *"$2"* ]]; then
+                    echo "Arquivo já existe"
+                    exit 1
+                fi
+            done
+            touch $2.py
         fi
     ;;
     "--help")

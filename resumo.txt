@@ -1,0 +1,4 @@
+Arquivo sh que possui a funcionalidade de criar arquivos main em diferentes linguagens
+de programação. Modo de uso:
+    --c++ -> cria u marquivo do tipo .cpp
+    --py -> cria um arquivo do tipo .py

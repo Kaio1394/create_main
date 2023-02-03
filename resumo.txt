@@ -2,3 +2,4 @@ Arquivo sh que possui a funcionalidade de criar arquivos main em diferentes ling
 de programação. Modo de uso:
     --c++ -> cria u marquivo do tipo .cpp
     --py -> cria um arquivo do tipo .py
+    --py <nome do arquivo> -> definir nome do arquivo a ser criado

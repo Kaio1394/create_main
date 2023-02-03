@@ -1,5 +1,12 @@
+--------------------------------------------------------------------------------------------------------
 Arquivo sh que possui a funcionalidade de criar arquivos main em diferentes linguagens
 de programação. Modo de uso:
-    --c++ -> cria u marquivo do tipo .cpp
-    --py -> cria um arquivo do tipo .py
-    --py <nome do arquivo> -> definir nome do arquivo a ser criado
+    --c++ -> cria u marquivo do tipo .cpp.
+    --py -> cria um arquivo do tipo .py.
+    --py <nome do arquivo> -> definir nome do arquivo a ser criado.
+    --ren -> renomeia arquivos.
+    --delete-empty-files -> deleta arquivos que contém tamanho igual a zero.
+ Uso:   
+    create_main [--c++] [--c++ file_name.cpp] [--py] [--py file_name.py] [--ren] [--delete-empty-files]
+    [--delete-empty-files path_file] [--help] 
+--------------------------------------------------------------------------------------------------------

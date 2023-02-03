@@ -100,16 +100,14 @@ case $1 in
         fi
     ;;
     "--delete-empty-files")
-        # if [ ! -z $2 ]; then
-        #     for i in $2/*; do
-        #         if [[ -s $i ]]; then
-        #             echo "O arquivo $i está vazio"
-        #         else
-        #             echo "Teste"
-        #         fi
-        #     done
-        # fi
-        du -hsk $PWD/main.py
+        if [ -z $2 ]; then
+            for i in $(find $PWD/* -size 0)
+            do  
+                rm -f $i  
+            done
+        else
+            rm -f $2
+        fi
     ;;
     *) echo default
     ;;  

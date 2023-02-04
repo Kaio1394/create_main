@@ -95,11 +95,21 @@ case $1 in
     "--ren")
         if [ -z $2 -o -z $3 ]; then
             echo "Parâmetros não informados."
+        elif [ ! -f $2 ]; then
+            echo "Arquivo com o caminho $2 não existe"
         else
             mv $2 $3
         fi
     ;;
     "--delete-empty-files")
+        echo "Será deletado arquivo com tamanho igual a zero. Tem certeza disso? (s/n)"
+        read OP
+        if [ "$OP" = "s" ] || [ " $OP" = "S" ]; then
+            continue
+        elif [ "$OP" = "\n" ]; then
+            echo "Processo cancelado"
+            exit 1
+        fi
         if [ -z $2 ]; then
             for i in $(find $PWD/* -size 0)
             do  

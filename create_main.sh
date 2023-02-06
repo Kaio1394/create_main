@@ -13,6 +13,7 @@ PY="
 if __name__ == '__main_':\n
     print('Olá mundo')
 "
+# trap read DEBUG
 
 LOG=$PWD/logs.out
 DATEHOUR=$(date)
@@ -40,6 +41,7 @@ case $1 in
                 fi             
             fi
         else
+            
             for i in $PWD/*; do
                 if [[ "$i" == *"$2"* ]]; then
                     echo "$DATEHOUR: Arquivo $2 já existe" >> $LOG
@@ -59,6 +61,7 @@ case $1 in
                     exit 1
                 fi
             done
+            
             touch $2.cpp
             echo "$DATEHOUR: Arquivo $2 criado com sucesso." >> $LOG
         fi
@@ -141,3 +144,4 @@ case $1 in
 esac
 echo "$DATEHOUR: Programa finalizado." >> $LOG
 echo "_________________________________________________________________" >> $LOG
+# trap "" DEBUG

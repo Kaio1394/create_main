@@ -14,7 +14,7 @@ if __name__ == '__main_':\n
     print('Olá mundo')
 "
 # trap read DEBUG
-
+VERSION="0.0.1"
 LOG=$PWD/logs.out
 DATEHOUR=$(date)
 echo "$DATEHOUR: Programa inicializado." >> $LOG
@@ -139,7 +139,13 @@ case $1 in
             echo "$DATEHOUR: Arquivo $2 deletado." >> $LOG
         fi
     ;;
-    *) echo default
+    "--version") 
+        echo $VERSION
+    ;;
+    *) 
+        echo "Opção inválida. Tags disponíveis: "
+        cat tags.txt
+        exit 1
     ;;  
 esac
 echo "$DATEHOUR: Programa finalizado." >> $LOG

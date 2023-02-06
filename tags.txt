@@ -1,0 +1,5 @@
+    --version
+    --help
+    --c++
+    --py
+    --delete-empty-files
